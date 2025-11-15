@@ -11,9 +11,9 @@
     **Harga Satuan:** Rp {{ number_format($transaksi->harga_satuan, 0, ',', '.') }}
     **Total Harga:** Rp {{ number_format($transaksi->jumlah_barang * $transaksi->harga_satuan, 0, ',', '.') }}
 
-    @component('mail::button', ['url' => url('/transaksi/' . $transaksi->id)])
+    {{-- @component('mail::button', ['url' => url('/transaksi/' . $transaksi->id)])
         Lihat Detail Transaksi
-    @endcomponent
+    @endcomponent --}}
 
     Terima kasih telah menggunakan layanan kami.<br>
     {{ config('mail.from.name') }}

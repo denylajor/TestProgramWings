@@ -181,4 +181,35 @@ class TransaksiController extends Controller
             ], 500);
         }
     }
+
+    public function barangMasuk()
+    {
+        $transRes = DB::select("SELECT SUM(jumlah_barang) as total FROM transaksi WHERE id_jenis_transaksi = 1");
+        return response()->json([
+            'responseCode' => 200,
+            'responseMessage' => 'Success Mendapatkan Data . .',
+            'data' => $transRes[0]->total
+        ], 200);
+    }
+
+
+    public function barangKeluar()
+    {
+        $transRes = DB::select("SELECT SUM(jumlah_barang) as total FROM transaksi WHERE id_jenis_transaksi = 2");
+        return response()->json([
+            'responseCode' => 200,
+            'responseMessage' => 'Success Mendapatkan Data . .',
+            'data' => $transRes[0]->total
+        ], 200);
+    }
+
+    public function blmApprove()
+    {
+        $transRes = DB::select("SELECT COUNT(*) as total FROM transaksi WHERE approval = 0");
+        return response()->json([
+            'responseCode' => 200,
+            'responseMessage' => 'Success Mendapatkan Data . .',
+            'data' => $transRes[0]->total
+        ], 200);
+    }
 }

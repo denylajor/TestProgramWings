@@ -48,7 +48,6 @@ function Sidebar({ setUser }) {
           to="/"
         >
           <div className="sidebar-brand-icon rotate-n-15">
-            <i className="fas fa-laugh-wink"></i>
           </div>
           <div className="sidebar-brand-text mx-3">TRANSAKSI BARANG</div>
         </Link>

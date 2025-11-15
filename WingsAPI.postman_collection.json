@@ -1,0 +1,1247 @@
+{
+	"info": {
+		"_postman_id": "066136a4-87c0-4e21-a920-6a432f52f672",
+		"name": "WingsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43464061",
+		"_collection_link": "https://rest-api-dev-666.postman.co/workspace/Team-Workspace~b949e7e2-c209-4349-8122-d648f8258469/collection/43464061-066136a4-87c0-4e21-a920-6a432f52f672?action=share&source=collection_link&creator=43464061"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"user\",\r\n  \"password\": \"user123\"\r\n}\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 13:56:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 13:56:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseMessage\": \"Login berhasil\",\n    \"user\": {\n        \"id_user\": 1,\n        \"id_role\": 1,\n        \"role\": \"Admin\",\n        \"username\": \"admin\",\n        \"created_at\": null,\n        \"created_by\": null,\n        \"updated_at\": null,\n        \"updated_by\": null\n    },\n    \"token\": \"3|QuOAiIw2ssk5W4adHLgCKMPc9iRTX99GRBXEjA4a\"\n}"
+						},
+						{
+							"name": "Gagal Validasi",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 13:57:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 13:57:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": 422,\n    \"responseMessage\": \"Validasi gagal\",\n    \"errors\": {\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin12a\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 13:57:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 13:57:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": 401,\n    \"responseMessage\": \"Username atau password salah\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 13:59:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 13:59:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseMessage\": \"Login Gagal\",\n    \"error\": \"Method Illuminate\\\\Auth\\\\SessionGuard::usera does not exist.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"item": [
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "55|1hWsgQJowK4iM6hzDuufbmcAm3EfJsUO19ErNKN6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Nov 2025 10:34:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Nov 2025 10:34:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logout berhasil\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Jenis Transaksi",
+			"item": [
+				{
+					"name": "Jenis Transaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "95|VrWMocncph5jFKNvGf2B1hbs8BImhNOOhQmIy33i",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jenisTransaksi",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jenisTransaksi"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jenisTransaksi",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jenisTransaksi"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:40:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:40:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": 200,\n    \"responseMessage\": \"Success Mendapatkan Data . .\",\n    \"data\": [\n        {\n            \"id_jenis_transaksi\": 1,\n            \"jenis_transaksi\": \"Barang Masuk\",\n            \"created_at\": \"2025-11-13T06:23:02.000000Z\",\n            \"updated_at\": null,\n            \"created_by\": \"System\",\n            \"updated_by\": null\n        },\n        {\n            \"id_jenis_transaksi\": 2,\n            \"jenis_transaksi\": \"Barang Keluar\",\n            \"created_at\": \"2025-11-13T06:23:02.000000Z\",\n            \"updated_at\": null,\n            \"created_by\": \"System\",\n            \"updated_by\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Nomor Transaksi",
+			"item": [
+				{
+					"name": "Nomor Transaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "95|VrWMocncph5jFKNvGf2B1hbs8BImhNOOhQmIy33i",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jenisTransaksi/noTransaksi/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jenisTransaksi",
+								"noTransaksi",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jenisTransaksi/noTransaksi/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jenisTransaksi",
+										"noTransaksi",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:40:29 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:40:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": 200,\n    \"responseMessage\": \"Success Mendapatkan Data . .\",\n    \"data\": \"000008/BARANGMASUK/WINGS/XI/2025\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaksi",
+			"item": [
+				{
+					"name": "Transaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "94|BrIUDEjv7XTI1cVEClDa8RJbkoPrhIDQlFgKChFb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/getTransaksi",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getTransaksi"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/getTransaksi",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"getTransaksi"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:39:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:39:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": 200,\n    \"responseMessage\": \"Success Mendapatkan Data . .\",\n    \"data\": [\n        {\n            \"id\": 29,\n            \"jenis_transaksi\": \"Barang Masuk\",\n            \"no_transaksi\": \"000007/BARANGMASUK/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-15\",\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_barang\": 12,\n            \"harga_satuan\": 5000,\n            \"approval\": 1,\n            \"keterangan\": \"tes\",\n            \"created_at\": \"2025-11-14T14:44:51.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-15T09:15:04.000000Z\",\n            \"updated_by\": \"admin\"\n        },\n        {\n            \"id\": 28,\n            \"jenis_transaksi\": \"Barang Masuk\",\n            \"no_transaksi\": \"000006/BARANGMASUK/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-15\",\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_barang\": 5,\n            \"harga_satuan\": 1000,\n            \"approval\": 0,\n            \"keterangan\": null,\n            \"created_at\": \"2025-11-14T13:48:21.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-14T23:57:19.000000Z\",\n            \"updated_by\": \"admin\"\n        },\n        {\n            \"id\": 27,\n            \"jenis_transaksi\": \"Barang Keluar\",\n            \"no_transaksi\": \"000004/BARANGKELUAR/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-15\",\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_barang\": 3,\n            \"harga_satuan\": 2500,\n            \"approval\": 0,\n            \"keterangan\": null,\n            \"created_at\": \"2025-11-14T13:47:31.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": null,\n            \"updated_by\": null\n        },\n        {\n            \"id\": 26,\n            \"jenis_transaksi\": \"Barang Keluar\",\n            \"no_transaksi\": \"000003/BARANGKELUAR/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-15\",\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_barang\": 3,\n            \"harga_satuan\": 1000,\n            \"approval\": 0,\n            \"keterangan\": \"TES\",\n            \"created_at\": \"2025-11-14T13:46:35.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-14T23:52:49.000000Z\",\n            \"updated_by\": \"admin\"\n        },\n        {\n            \"id\": 25,\n            \"jenis_transaksi\": \"Barang Masuk\",\n            \"no_transaksi\": \"000005/BARANGMASUK/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-15\",\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_barang\": 5,\n            \"harga_satuan\": 2000,\n            \"approval\": 0,\n            \"keterangan\": \"TES\",\n            \"created_at\": \"2025-11-14T13:45:03.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-14T23:59:51.000000Z\",\n            \"updated_by\": \"admin\"\n        },\n        {\n            \"id\": 24,\n            \"jenis_transaksi\": \"Barang Masuk\",\n            \"no_transaksi\": \"000004/BARANGMASUK/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-15\",\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_barang\": 5,\n            \"harga_satuan\": 1000,\n            \"approval\": 0,\n            \"keterangan\": null,\n            \"created_at\": \"2025-11-14T13:40:46.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-15T00:01:44.000000Z\",\n            \"updated_by\": \"admin\"\n        },\n        {\n            \"id\": 23,\n            \"jenis_transaksi\": \"Barang Keluar\",\n            \"no_transaksi\": \"000002/BARANGKELUAR/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-15\",\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_barang\": 5,\n            \"harga_satuan\": 1000,\n            \"approval\": 0,\n            \"keterangan\": \"TES\",\n            \"created_at\": \"2025-11-14T13:31:06.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-14T23:49:44.000000Z\",\n            \"updated_by\": \"admin\"\n        },\n        {\n            \"id\": 22,\n            \"jenis_transaksi\": \"Barang Masuk\",\n            \"no_transaksi\": \"000003/BARANGMASUK/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-14\",\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_barang\": 20,\n            \"harga_satuan\": 2000,\n            \"approval\": 0,\n            \"keterangan\": \"TES\",\n            \"created_at\": \"2025-11-14T09:27:28.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-15T00:02:18.000000Z\",\n            \"updated_by\": \"admin\"\n        },\n        {\n            \"id\": 21,\n            \"jenis_transaksi\": \"Barang Masuk\",\n            \"no_transaksi\": \"000002/BARANGMASUK/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-14\",\n            \"nama_barang\": \"Mie Sedaap Soto\",\n            \"jumlah_barang\": 10,\n            \"harga_satuan\": 1000,\n            \"approval\": 0,\n            \"keterangan\": \"TES\",\n            \"created_at\": \"2025-11-14T08:10:19.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-14T23:56:07.000000Z\",\n            \"updated_by\": \"admin\"\n        },\n        {\n            \"id\": 20,\n            \"jenis_transaksi\": \"Barang Keluar\",\n            \"no_transaksi\": \"000001/BARANGKELUAR/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-14\",\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_barang\": 10,\n            \"harga_satuan\": 2000,\n            \"approval\": 0,\n            \"keterangan\": null,\n            \"created_at\": \"2025-11-14T07:53:15.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-14T10:41:57.000000Z\",\n            \"updated_by\": \"admin\"\n        },\n        {\n            \"id\": 19,\n            \"jenis_transaksi\": \"Barang Masuk\",\n            \"no_transaksi\": \"000001/BARANGMASUK/WINGS/XI/2025\",\n            \"tanggal_transaksi\": \"2025-11-14\",\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_barang\": 5,\n            \"harga_satuan\": 1000,\n            \"approval\": 0,\n            \"keterangan\": \"TES\",\n            \"created_at\": \"2025-11-14T07:52:42.000000Z\",\n            \"created_by\": \"user\",\n            \"updated_at\": \"2025-11-14T23:40:39.000000Z\",\n            \"updated_by\": \"admin\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Stock",
+			"item": [
+				{
+					"name": "Stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "94|BrIUDEjv7XTI1cVEClDa8RJbkoPrhIDQlFgKChFb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/getStock",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getStock"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/getStock",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"getStock"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:39:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:39:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": 200,\n    \"responseMessage\": \"Success Mendapatkan Data . .\",\n    \"data\": [\n        {\n            \"id_stock\": 6,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 25,\n            \"harga_satuan\": 1000,\n            \"created_at\": \"2025-11-14T10:41:04.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:57:19.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 14,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 20,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T15:37:59.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T15:37:59.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 17,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 20,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T15:53:16.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T15:53:16.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 20,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 20,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T15:56:46.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T15:56:46.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 23,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 20,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T16:02:12.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T16:02:12.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 25,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 20,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T16:13:45.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T16:13:45.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 28,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 20,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T23:26:12.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:26:12.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 31,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 20,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T23:39:30.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:39:30.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 34,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 20,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T23:53:05.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:53:05.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 37,\n            \"id_barang\": 4,\n            \"nama_barang\": \"Mie Sedaap Ayam Bawang\",\n            \"jumlah_stock\": 20,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-15T00:02:18.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-15T00:02:18.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 8,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 29,\n            \"harga_satuan\": 1000,\n            \"created_at\": \"2025-11-14T13:29:28.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-15T00:01:44.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 9,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 5,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T13:45:09.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T13:45:09.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 11,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T14:44:58.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T14:44:58.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 12,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T14:48:08.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T14:48:08.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 13,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 5,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T15:01:17.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T15:01:17.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 15,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T15:39:41.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T15:39:41.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 16,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 5,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T15:50:52.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T15:50:52.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 18,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T15:53:31.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T15:53:32.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 19,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 5,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T15:55:11.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T15:55:11.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 21,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T15:57:24.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T15:57:24.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 22,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 5,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T16:01:11.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T16:01:11.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 24,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T16:06:56.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T16:06:56.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 26,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T16:16:09.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T16:16:09.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 27,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 5,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T23:22:00.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:22:00.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 29,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T23:34:41.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:34:41.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 30,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 5,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T23:35:56.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:35:56.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 32,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T23:45:16.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:45:16.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 33,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 5,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T23:47:49.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:47:49.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 35,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-14T23:57:09.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:57:09.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 36,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 5,\n            \"harga_satuan\": 2000,\n            \"created_at\": \"2025-11-14T23:59:51.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:59:51.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 38,\n            \"id_barang\": 1,\n            \"nama_barang\": \"Mie Sedaap Goreng\",\n            \"jumlah_stock\": 12,\n            \"harga_satuan\": 5000,\n            \"created_at\": \"2025-11-15T09:15:04.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-15T09:15:04.000000Z\",\n            \"updated_by\": null\n        },\n        {\n            \"id_stock\": 7,\n            \"id_barang\": 2,\n            \"nama_barang\": \"Mie Sedaap Soto\",\n            \"jumlah_stock\": 60,\n            \"harga_satuan\": 1000,\n            \"created_at\": \"2025-11-14T13:27:57.000000Z\",\n            \"created_by\": \"admin\",\n            \"updated_at\": \"2025-11-14T23:56:07.000000Z\",\n            \"updated_by\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Barang Keluar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "94|BrIUDEjv7XTI1cVEClDa8RJbkoPrhIDQlFgKChFb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/barangKeluar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"barangKeluar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/barangKeluar",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"barangKeluar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:38:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:38:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": 200,\n    \"responseMessage\": \"Success Mendapatkan Data . .\",\n    \"data\": \"21\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Barang Masuk",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "94|BrIUDEjv7XTI1cVEClDa8RJbkoPrhIDQlFgKChFb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/barangMasuk",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"barangMasuk"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/barangMasuk",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"barangMasuk"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:37:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:37:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": 200,\n    \"responseMessage\": \"Success Mendapatkan Data . .\",\n    \"data\": \"62\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Blm Approval",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "94|BrIUDEjv7XTI1cVEClDa8RJbkoPrhIDQlFgKChFb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/blmApprove",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blmApprove"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/blmApprove",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"blmApprove"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:39:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Nov 2025 09:39:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": 200,\n    \"responseMessage\": \"Success Mendapatkan Data . .\",\n    \"data\": 10\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

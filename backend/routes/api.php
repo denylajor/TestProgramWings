@@ -16,11 +16,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware('role:Admin|User')->group(function () {
         Route::get('getTransaksi', [TransaksiController::class, 'getTransaksi']);
         Route::get('getStock', [StockController::class, 'show']);
+        Route::get('barangMasuk', [TransaksiController::class, 'barangMasuk']);
+        Route::get('barangKeluar', [TransaksiController::class, 'barangKeluar']);
+        Route::get('blmApprove', [TransaksiController::class, 'blmApprove']);
     });
 
     Route::middleware('role:Admin')->group(function () {
         Route::patch('approveTransaksi/{id}', [TransaksiController::class, 'approveTransaksi']);
-        
     });
 
     Route::middleware('role:User')->group(function () {
