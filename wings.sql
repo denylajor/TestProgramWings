@@ -11,7 +11,7 @@
  Target Server Version : 100411 (10.4.11-MariaDB)
  File Encoding         : 65001
 
- Date: 15/11/2025 07:07:13
+ Date: 15/11/2025 17:12:23
 */
 
 SET NAMES utf8mb4;
@@ -121,7 +121,7 @@ CREATE TABLE `personal_access_tokens`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `personal_access_tokens_token_unique`(`token` ASC) USING BTREE,
   INDEX `personal_access_tokens_tokenable_type_tokenable_id_index`(`tokenable_type` ASC, `tokenable_id` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 90 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 100 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of personal_access_tokens
@@ -194,9 +194,11 @@ INSERT INTO `personal_access_tokens` VALUES (82, 'App\\User', 2, 'auth_token', '
 INSERT INTO `personal_access_tokens` VALUES (83, 'App\\User', 1, 'auth_token', '48e9e3ba5f616162862dd4233cf105ce167b7cec4d99101c7585aa43522a0889', '[\"*\"]', NULL, '2025-11-14 15:40:26', '2025-11-14 15:40:26');
 INSERT INTO `personal_access_tokens` VALUES (84, 'App\\User', 2, 'auth_token', '1f95ff0ebd51fd1cd5ceb3b454a44935b5e49c86899a59bf3c8a077390c1a5da', '[\"*\"]', '2025-11-14 15:40:38', '2025-11-14 15:40:30', '2025-11-14 15:40:38');
 INSERT INTO `personal_access_tokens` VALUES (85, 'App\\User', 1, 'auth_token', '14002ad3c7468d5dce2e1692118f96dde88e21e6e4311a4b47be27976a655e14', '[\"*\"]', '2025-11-14 15:46:44', '2025-11-14 15:40:45', '2025-11-14 15:46:44');
-INSERT INTO `personal_access_tokens` VALUES (86, 'App\\User', 2, 'auth_token', 'e678ec8663373c3612f26f11dcea716ffd92249aa46697c077856b67262ac29f', '[\"*\"]', '2025-11-15 06:47:44', '2025-11-14 15:48:20', '2025-11-15 06:47:44');
 INSERT INTO `personal_access_tokens` VALUES (88, 'App\\User', 1, 'auth_token', '90dd526ec8e52aec1cfc1b70998eb8f3729d5bed2d9c43d98d9c22c73d455c4e', '[\"*\"]', '2025-11-15 07:02:24', '2025-11-14 15:56:24', '2025-11-15 07:02:24');
 INSERT INTO `personal_access_tokens` VALUES (89, 'App\\User', 1, 'auth_token', 'a6d92014d587f5d1c484c0b36ce81963fcdbe6a50a7640b496211066313f7658', '[\"*\"]', '2025-11-14 20:24:17', '2025-11-14 20:22:59', '2025-11-14 20:24:17');
+INSERT INTO `personal_access_tokens` VALUES (94, 'App\\User', 1, 'auth_token', '3eb22459469cf3c17c3746e8bbdf4ce0291f39735bda265fdefdf24ae7441621', '[\"*\"]', '2025-11-15 16:39:49', '2025-11-15 16:34:14', '2025-11-15 16:39:49');
+INSERT INTO `personal_access_tokens` VALUES (95, 'App\\User', 2, 'auth_token', '8a47d4bf15aacdd0c375dbc9f0440f79c240d2f2619b2b360287ffc659f9b64c', '[\"*\"]', '2025-11-15 16:40:51', '2025-11-15 16:40:18', '2025-11-15 16:40:51');
+INSERT INTO `personal_access_tokens` VALUES (99, 'App\\User', 1, 'auth_token', '6f8847dd026233b5be399349da8ab5e170e1a07c83cd051b8903444d09eeffb5', '[\"*\"]', '2025-11-15 17:00:05', '2025-11-15 16:54:51', '2025-11-15 17:00:05');
 
 -- ----------------------------
 -- Table structure for role_user
@@ -235,42 +237,15 @@ CREATE TABLE `stock`  (
   PRIMARY KEY (`id_stock`) USING BTREE,
   INDEX `stock_id_barang_foreign`(`id_barang` ASC) USING BTREE,
   CONSTRAINT `stock_id_barang_foreign` FOREIGN KEY (`id_barang`) REFERENCES `master_barang` (`id_barang`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of stock
 -- ----------------------------
-INSERT INTO `stock` VALUES (6, 4, 25, 1000.00, '2025-11-14 17:41:04', '2025-11-15 06:57:19', 'admin', NULL);
-INSERT INTO `stock` VALUES (7, 2, 60, 1000.00, '2025-11-14 20:27:57', '2025-11-15 06:56:07', 'admin', NULL);
-INSERT INTO `stock` VALUES (8, 1, 29, 1000.00, '2025-11-14 20:29:28', '2025-11-15 07:01:44', 'admin', NULL);
-INSERT INTO `stock` VALUES (9, 1, 5, 2000.00, '2025-11-14 20:45:09', '2025-11-14 20:45:09', 'admin', NULL);
-INSERT INTO `stock` VALUES (11, 1, 12, 5000.00, '2025-11-14 21:44:58', '2025-11-14 21:44:58', 'admin', NULL);
-INSERT INTO `stock` VALUES (12, 1, 12, 5000.00, '2025-11-14 21:48:08', '2025-11-14 21:48:08', 'admin', NULL);
-INSERT INTO `stock` VALUES (13, 1, 5, 2000.00, '2025-11-14 22:01:17', '2025-11-14 22:01:17', 'admin', NULL);
-INSERT INTO `stock` VALUES (14, 4, 20, 2000.00, '2025-11-14 22:37:59', '2025-11-14 22:37:59', 'admin', NULL);
-INSERT INTO `stock` VALUES (15, 1, 12, 5000.00, '2025-11-14 22:39:41', '2025-11-14 22:39:41', 'admin', NULL);
-INSERT INTO `stock` VALUES (16, 1, 5, 2000.00, '2025-11-14 22:50:52', '2025-11-14 22:50:52', 'admin', NULL);
-INSERT INTO `stock` VALUES (17, 4, 20, 2000.00, '2025-11-14 22:53:16', '2025-11-14 22:53:16', 'admin', NULL);
-INSERT INTO `stock` VALUES (18, 1, 12, 5000.00, '2025-11-14 22:53:31', '2025-11-14 22:53:32', 'admin', NULL);
-INSERT INTO `stock` VALUES (19, 1, 5, 2000.00, '2025-11-14 22:55:11', '2025-11-14 22:55:11', 'admin', NULL);
-INSERT INTO `stock` VALUES (20, 4, 20, 2000.00, '2025-11-14 22:56:46', '2025-11-14 22:56:46', 'admin', NULL);
-INSERT INTO `stock` VALUES (21, 1, 12, 5000.00, '2025-11-14 22:57:24', '2025-11-14 22:57:24', 'admin', NULL);
-INSERT INTO `stock` VALUES (22, 1, 5, 2000.00, '2025-11-14 23:01:11', '2025-11-14 23:01:11', 'admin', NULL);
-INSERT INTO `stock` VALUES (23, 4, 20, 2000.00, '2025-11-14 23:02:12', '2025-11-14 23:02:12', 'admin', NULL);
-INSERT INTO `stock` VALUES (24, 1, 12, 5000.00, '2025-11-14 23:06:56', '2025-11-14 23:06:56', 'admin', NULL);
-INSERT INTO `stock` VALUES (25, 4, 20, 2000.00, '2025-11-14 23:13:45', '2025-11-14 23:13:45', 'admin', NULL);
-INSERT INTO `stock` VALUES (26, 1, 12, 5000.00, '2025-11-14 23:16:09', '2025-11-14 23:16:09', 'admin', NULL);
-INSERT INTO `stock` VALUES (27, 1, 5, 2000.00, '2025-11-15 06:22:00', '2025-11-15 06:22:00', 'admin', NULL);
-INSERT INTO `stock` VALUES (28, 4, 20, 2000.00, '2025-11-15 06:26:12', '2025-11-15 06:26:12', 'admin', NULL);
-INSERT INTO `stock` VALUES (29, 1, 12, 5000.00, '2025-11-15 06:34:41', '2025-11-15 06:34:41', 'admin', NULL);
-INSERT INTO `stock` VALUES (30, 1, 5, 2000.00, '2025-11-15 06:35:56', '2025-11-15 06:35:56', 'admin', NULL);
-INSERT INTO `stock` VALUES (31, 4, 20, 2000.00, '2025-11-15 06:39:30', '2025-11-15 06:39:30', 'admin', NULL);
-INSERT INTO `stock` VALUES (32, 1, 12, 5000.00, '2025-11-15 06:45:16', '2025-11-15 06:45:16', 'admin', NULL);
-INSERT INTO `stock` VALUES (33, 1, 5, 2000.00, '2025-11-15 06:47:49', '2025-11-15 06:47:49', 'admin', NULL);
-INSERT INTO `stock` VALUES (34, 4, 20, 2000.00, '2025-11-15 06:53:05', '2025-11-15 06:53:05', 'admin', NULL);
-INSERT INTO `stock` VALUES (35, 1, 12, 5000.00, '2025-11-15 06:57:09', '2025-11-15 06:57:09', 'admin', NULL);
-INSERT INTO `stock` VALUES (36, 1, 5, 2000.00, '2025-11-15 06:59:51', '2025-11-15 06:59:51', 'admin', NULL);
-INSERT INTO `stock` VALUES (37, 4, 20, 2000.00, '2025-11-15 07:02:18', '2025-11-15 07:02:18', 'admin', NULL);
+INSERT INTO `stock` VALUES (39, 4, 5, 1000.00, '2025-11-15 16:55:08', '2025-11-15 16:55:08', 'admin', NULL);
+INSERT INTO `stock` VALUES (40, 1, 5, 2000.00, '2025-11-15 16:55:20', '2025-11-15 16:55:20', 'admin', NULL);
+INSERT INTO `stock` VALUES (41, 4, 20, 2000.00, '2025-11-15 16:55:29', '2025-11-15 16:55:29', 'admin', NULL);
+INSERT INTO `stock` VALUES (42, 2, 10, 1000.00, '2025-11-15 17:00:00', '2025-11-15 17:00:00', 'admin', NULL);
 
 -- ----------------------------
 -- Table structure for transaksi
@@ -302,15 +277,15 @@ CREATE TABLE `transaksi`  (
 -- ----------------------------
 INSERT INTO `transaksi` VALUES (19, 1, 1, '000001/BARANGMASUK/WINGS/XI/2025', '2025-11-14', 5, 1000.00, 0, 'TES', '2025-11-14 14:52:42', '2025-11-15 06:40:39', 'user', 'admin');
 INSERT INTO `transaksi` VALUES (20, 4, 2, '000001/BARANGKELUAR/WINGS/XI/2025', '2025-11-14', 10, 2000.00, 0, NULL, '2025-11-14 14:53:15', '2025-11-14 17:41:57', 'user', 'admin');
-INSERT INTO `transaksi` VALUES (21, 2, 1, '000002/BARANGMASUK/WINGS/XI/2025', '2025-11-14', 10, 1000.00, 0, 'TES', '2025-11-14 15:10:19', '2025-11-15 06:56:07', 'user', 'admin');
-INSERT INTO `transaksi` VALUES (22, 4, 1, '000003/BARANGMASUK/WINGS/XI/2025', '2025-11-14', 20, 2000.00, 1, 'TES', '2025-11-14 16:27:28', '2025-11-15 07:02:18', 'user', 'admin');
+INSERT INTO `transaksi` VALUES (21, 2, 1, '000002/BARANGMASUK/WINGS/XI/2025', '2025-11-14', 10, 1000.00, 1, 'TES', '2025-11-14 15:10:19', '2025-11-15 17:00:00', 'user', 'admin');
+INSERT INTO `transaksi` VALUES (22, 4, 1, '000003/BARANGMASUK/WINGS/XI/2025', '2025-11-14', 20, 2000.00, 1, 'TES', '2025-11-14 16:27:28', '2025-11-15 16:55:29', 'user', 'admin');
 INSERT INTO `transaksi` VALUES (23, 4, 2, '000002/BARANGKELUAR/WINGS/XI/2025', '2025-11-15', 5, 1000.00, 0, 'TES', '2025-11-14 20:31:06', '2025-11-15 06:49:44', 'user', 'admin');
-INSERT INTO `transaksi` VALUES (24, 1, 1, '000004/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 5, 1000.00, 1, NULL, '2025-11-14 20:40:46', '2025-11-15 07:01:44', 'user', 'admin');
-INSERT INTO `transaksi` VALUES (25, 1, 1, '000005/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 5, 2000.00, 1, 'TES', '2025-11-14 20:45:03', '2025-11-15 06:59:51', 'user', 'admin');
+INSERT INTO `transaksi` VALUES (24, 1, 1, '000004/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 5, 1000.00, 0, NULL, '2025-11-14 20:40:46', '2025-11-15 07:01:44', 'user', 'admin');
+INSERT INTO `transaksi` VALUES (25, 1, 1, '000005/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 5, 2000.00, 1, 'TES', '2025-11-14 20:45:03', '2025-11-15 16:55:20', 'user', 'admin');
 INSERT INTO `transaksi` VALUES (26, 1, 2, '000003/BARANGKELUAR/WINGS/XI/2025', '2025-11-15', 3, 1000.00, 0, 'TES', '2025-11-14 20:46:35', '2025-11-15 06:52:49', 'user', 'admin');
 INSERT INTO `transaksi` VALUES (27, 1, 2, '000004/BARANGKELUAR/WINGS/XI/2025', '2025-11-15', 3, 2500.00, 0, NULL, '2025-11-14 20:47:31', NULL, 'user', NULL);
-INSERT INTO `transaksi` VALUES (28, 4, 1, '000006/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 5, 1000.00, 1, NULL, '2025-11-14 20:48:21', '2025-11-15 06:57:19', 'user', 'admin');
-INSERT INTO `transaksi` VALUES (29, 1, 1, '000007/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 12, 5000.00, 1, 'tes', '2025-11-14 21:44:51', '2025-11-15 06:57:09', 'user', 'admin');
+INSERT INTO `transaksi` VALUES (28, 4, 1, '000006/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 5, 1000.00, 1, NULL, '2025-11-14 20:48:21', '2025-11-15 16:55:08', 'user', 'admin');
+INSERT INTO `transaksi` VALUES (29, 1, 1, '000007/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 12, 5000.00, 1, 'tes', '2025-11-14 21:44:51', '2025-11-15 16:15:04', 'user', 'admin');
 
 -- ----------------------------
 -- Table structure for users
