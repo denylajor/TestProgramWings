@@ -166,6 +166,22 @@ class TransaksiController extends Controller
         }
     }
 
+    public function tolakTransaksi(Request $request, $id)
+    {
+        try {
+            $tolak = transaksi::where(['id' => $id])->update(['approval' => 2, 'updated_by' => auth()->user()->username, 'updated_at' => now()]);
+            return response()->json([
+                'responseCode' => 200,
+                'responseMessage' => 'Success Tolak Transaksi . .',
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'responseCode' => 500,
+                'responseMessage' => 'Gagal Tolak Transaksi . .'
+            ], 500);
+        }
+    }
+
     public function deleteTransaksi($id)
     {
         try {

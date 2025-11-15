@@ -67,10 +67,10 @@ function Transaksi() {
       case 1:
         return <p style={{ color: "green" }}>Sudah Approve</p>;
       case 2:
-        return <p style={{ color: "green" }}>Ditolak</p>;
+        return <p style={{ color: "red" }}>Ditolak</p>;
       case 0:
       default:
-        return <p style={{ color: "green" }}>Menunggu Approve</p>;
+        return <p>Menunggu Approve</p>;
     }
   };
 
@@ -80,7 +80,15 @@ function Transaksi() {
         return "";
       case 2:
         return (
-          <span className="btn btn-warning btn-circle" title="Revisi"></span>
+          <ButtonUser roleAllowed={["User"]} currentRole={role}>
+            <span
+              className="btn btn-danger btn-circle"
+              title="Delete"
+              onClick={() => buttonDelete(id)}
+            >
+              <i className="fas fa-trash"></i>
+            </span>
+          </ButtonUser>
         );
       case 0:
       default:
@@ -93,9 +101,15 @@ function Transaksi() {
                 onClick={() => buttonApprove(id)}
               >
                 <i className="fas fa-check"></i>
+              </span>{" "}
+              <span
+                className="btn btn-danger btn-circle"
+                title="Tolak"
+                onClick={() => buttonTolak(id)}
+              >
+                X
               </span>
-            </ButtonAdmin>
-            {" | "}
+            </ButtonAdmin>{" "}
             <ButtonUser roleAllowed={["User"]} currentRole={role}>
               <span
                 className="btn btn-danger btn-circle"
@@ -115,6 +129,34 @@ function Transaksi() {
       setLoading(true);
       const resApprove = await api.patch(
         `approveTransaksi/${id}`,
+        {
+          user: user,
+        },
+        { withCredentials: true }
+      );
+
+      Swal.fire({
+        title: resApprove.data.responseMessage,
+        icon: "success",
+        confirmButtonText: "OK!",
+      });
+      loadData();
+    } catch (err) {
+      Swal.fire({
+        title: err.response?.data?.responseMessage,
+        icon: "error",
+        confirmButtonText: "OK!",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const buttonTolak = async (id) => {
+    try {
+      setLoading(true);
+      const resApprove = await api.patch(
+        `tolakTransaksi/${id}`,
         {
           user: user,
         },

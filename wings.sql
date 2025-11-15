@@ -11,7 +11,7 @@
  Target Server Version : 100411 (10.4.11-MariaDB)
  File Encoding         : 65001
 
- Date: 15/11/2025 17:12:23
+ Date: 15/11/2025 17:27:38
 */
 
 SET NAMES utf8mb4;
@@ -121,7 +121,7 @@ CREATE TABLE `personal_access_tokens`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `personal_access_tokens_token_unique`(`token` ASC) USING BTREE,
   INDEX `personal_access_tokens_tokenable_type_tokenable_id_index`(`tokenable_type` ASC, `tokenable_id` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 100 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 101 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of personal_access_tokens
@@ -198,7 +198,8 @@ INSERT INTO `personal_access_tokens` VALUES (88, 'App\\User', 1, 'auth_token', '
 INSERT INTO `personal_access_tokens` VALUES (89, 'App\\User', 1, 'auth_token', 'a6d92014d587f5d1c484c0b36ce81963fcdbe6a50a7640b496211066313f7658', '[\"*\"]', '2025-11-14 20:24:17', '2025-11-14 20:22:59', '2025-11-14 20:24:17');
 INSERT INTO `personal_access_tokens` VALUES (94, 'App\\User', 1, 'auth_token', '3eb22459469cf3c17c3746e8bbdf4ce0291f39735bda265fdefdf24ae7441621', '[\"*\"]', '2025-11-15 16:39:49', '2025-11-15 16:34:14', '2025-11-15 16:39:49');
 INSERT INTO `personal_access_tokens` VALUES (95, 'App\\User', 2, 'auth_token', '8a47d4bf15aacdd0c375dbc9f0440f79c240d2f2619b2b360287ffc659f9b64c', '[\"*\"]', '2025-11-15 16:40:51', '2025-11-15 16:40:18', '2025-11-15 16:40:51');
-INSERT INTO `personal_access_tokens` VALUES (99, 'App\\User', 1, 'auth_token', '6f8847dd026233b5be399349da8ab5e170e1a07c83cd051b8903444d09eeffb5', '[\"*\"]', '2025-11-15 17:00:05', '2025-11-15 16:54:51', '2025-11-15 17:00:05');
+INSERT INTO `personal_access_tokens` VALUES (99, 'App\\User', 1, 'auth_token', '6f8847dd026233b5be399349da8ab5e170e1a07c83cd051b8903444d09eeffb5', '[\"*\"]', '2025-11-15 17:27:22', '2025-11-15 16:54:51', '2025-11-15 17:27:22');
+INSERT INTO `personal_access_tokens` VALUES (100, 'App\\User', 2, 'auth_token', '7ed9a8791eed21f32ef483bf95ccd5a222b3d091ac99bcf92302d962b8fdec6b', '[\"*\"]', '2025-11-15 17:27:25', '2025-11-15 17:17:46', '2025-11-15 17:27:25');
 
 -- ----------------------------
 -- Table structure for role_user
@@ -282,8 +283,8 @@ INSERT INTO `transaksi` VALUES (22, 4, 1, '000003/BARANGMASUK/WINGS/XI/2025', '2
 INSERT INTO `transaksi` VALUES (23, 4, 2, '000002/BARANGKELUAR/WINGS/XI/2025', '2025-11-15', 5, 1000.00, 0, 'TES', '2025-11-14 20:31:06', '2025-11-15 06:49:44', 'user', 'admin');
 INSERT INTO `transaksi` VALUES (24, 1, 1, '000004/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 5, 1000.00, 0, NULL, '2025-11-14 20:40:46', '2025-11-15 07:01:44', 'user', 'admin');
 INSERT INTO `transaksi` VALUES (25, 1, 1, '000005/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 5, 2000.00, 1, 'TES', '2025-11-14 20:45:03', '2025-11-15 16:55:20', 'user', 'admin');
-INSERT INTO `transaksi` VALUES (26, 1, 2, '000003/BARANGKELUAR/WINGS/XI/2025', '2025-11-15', 3, 1000.00, 0, 'TES', '2025-11-14 20:46:35', '2025-11-15 06:52:49', 'user', 'admin');
-INSERT INTO `transaksi` VALUES (27, 1, 2, '000004/BARANGKELUAR/WINGS/XI/2025', '2025-11-15', 3, 2500.00, 0, NULL, '2025-11-14 20:47:31', NULL, 'user', NULL);
+INSERT INTO `transaksi` VALUES (26, 1, 2, '000003/BARANGKELUAR/WINGS/XI/2025', '2025-11-15', 3, 1000.00, 2, 'TES', '2025-11-14 20:46:35', '2025-11-15 17:27:22', 'user', 'admin');
+INSERT INTO `transaksi` VALUES (27, 1, 2, '000004/BARANGKELUAR/WINGS/XI/2025', '2025-11-15', 3, 2500.00, 2, NULL, '2025-11-14 20:47:31', '2025-11-15 17:26:58', 'user', 'admin');
 INSERT INTO `transaksi` VALUES (28, 4, 1, '000006/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 5, 1000.00, 1, NULL, '2025-11-14 20:48:21', '2025-11-15 16:55:08', 'user', 'admin');
 INSERT INTO `transaksi` VALUES (29, 1, 1, '000007/BARANGMASUK/WINGS/XI/2025', '2025-11-15', 12, 5000.00, 1, 'tes', '2025-11-14 21:44:51', '2025-11-15 16:15:04', 'user', 'admin');
 

@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::middleware('role:Admin|User')->group(function () {
         Route::get('getTransaksi', [TransaksiController::class, 'getTransaksi']);
@@ -19,10 +18,12 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('barangMasuk', [TransaksiController::class, 'barangMasuk']);
         Route::get('barangKeluar', [TransaksiController::class, 'barangKeluar']);
         Route::get('blmApprove', [TransaksiController::class, 'blmApprove']);
+        Route::post('/logout', [AuthController::class, 'logout']);
     });
 
     Route::middleware('role:Admin')->group(function () {
         Route::patch('approveTransaksi/{id}', [TransaksiController::class, 'approveTransaksi']);
+        Route::patch('tolakTransaksi/{id}', [TransaksiController::class, 'tolakTransaksi']);
     });
 
     Route::middleware('role:User')->group(function () {
