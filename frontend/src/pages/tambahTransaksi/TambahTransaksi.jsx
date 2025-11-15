@@ -224,7 +224,6 @@ function TambahTransaksi() {
                         cols="30"
                         rows="5"
                         onChange={(e) => setSelectKeterangan(e.target.value)}
-                        required
                       ></textarea>
                     </div>
                   </div>
