@@ -23,7 +23,6 @@ function App() {
     fetchUser();
   }, []);
 
-  // fetch user dari API
   const fetchUser = async () => {
     const token = JSON.parse(localStorage.getItem("session"))?.token || null;
     if (!token) {
@@ -45,7 +44,7 @@ function App() {
   if (loading) return <Loading />;
 
   const PublicRoute = ({ children }) =>
-    !user ? children : <Navigate to="/Template" />;
+    !user ? children : <Navigate to="/Template/dashboard" />;
   const ProtectedRoute = ({ children }) =>
     user ? children : <Navigate to="/login" />;
 
